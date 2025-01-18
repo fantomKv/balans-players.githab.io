@@ -17,7 +17,7 @@ function formatNumber(number) {
 window.onload = function() {
     let balance = localStorage.getItem("balance");
     if (!balance) {
-        balance = 1000000000000; // Начальный баланс
+        balance = 47000000000000; // Начальный баланс
         localStorage.setItem("balance", balance);
     }
     document.getElementById("balance").innerText = formatNumber(balance);
