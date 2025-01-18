@@ -30,12 +30,12 @@ function formatNumber(number) {
 
 // При загрузке страницы отображаем текущий баланс из localStorage
 window.onload = function() {
-    let balance = localStorage.getItem("balance");
-    if (!balance) {
-        balance = 47000000000000; // Устанавливаем начальный баланс только один раз
+    let balance = parseFloat(localStorage.getItem("balance")); // Получаем баланс из localStorage
+    if (isNaN(balance)) { // Проверяем, есть ли баланс
+        balance = 47000000000000; // Устанавливаем начальный баланс, если его нет
         localStorage.setItem("balance", balance);
     }
-    document.getElementById("balance").innerText = formatNumber(balance);
+    document.getElementById("balance").innerText = formatNumber(balance); // Отображаем баланс
 };
 
 // Функция для авторизации пользователя
